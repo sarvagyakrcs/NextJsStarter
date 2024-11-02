@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next.js Starter Docs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+        .main-content {
+            margin-left: 250px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col md:flex-row">
+        <aside class="sidebar bg-white border-r border-gray-200 p-6">
+            <h1 class="text-2xl font-bold text-blue-600 mb-6">Next.js Starter Docs</h1>
+            <nav>
+                <ul class="space-y-2">
+                    <li><a href="#overview" class="block py-2 px-4 rounded hover:bg-gray-100">Overview</a></li>
+                    <li><a href="#features" class="block py-2 px-4 rounded hover:bg-gray-100">Features</a></li>
+                    <li><a href="#getting-started" class="block py-2 px-4 rounded hover:bg-gray-100">Getting Started</a></li>
+                    <li><a href="#project-structure" class="block py-2 px-4 rounded hover:bg-gray-100">Project Structure</a></li>
+                    <li><a href="#authentication" class="block py-2 px-4 rounded hover:bg-gray-100">Authentication</a></li>
+                    <li><a href="#file-upload" class="block py-2 px-4 rounded hover:bg-gray-100">File Upload</a></li>
+                    <li><a href="#ui-components" class="block py-2 px-4 rounded hover:bg-gray-100">UI Components</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content p-6 space-y-8">
+            <section id="overview">
+                <h2 class="text-3xl font-bold mb-4 text-blue-600">Next.js Starter Repository</h2>
+                <p class="text-lg mb-6 text-gray-600">
+                    Kickstart your web development project with this pre-configured Next.js starter. Featuring OAuth authentication, AWS S3 integration, and a complete set of ShadCN UI components.
+                </p>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Quick Start</h3>
+                        <p>Get up and running in minutes with our easy-to-follow setup guide.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Comprehensive Docs</h3>
+                        <p>Detailed documentation to help you understand and customize every aspect of the starter.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Community Support</h3>
+                        <p>Join our vibrant community for help, tips, and best practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">Features</h2>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">NextAuth Integration</h3>
+                        <p>Secure authentication with support for multiple OAuth providers.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">AWS S3 Integration</h3>
+                        <p>Upload and manage profile pictures directly from your application.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">OAuth Sign-In</h3>
+                        <p>Easily sign in with Google, GitHub, Twitter, and LinkedIn credentials.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">User Registration</h3>
+                        <p>Simple user registration process for new users.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">ShadCN Components</h3>
+                        <p>All ShadCN components are included for a responsive and modern UI.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">User Button</h3>
+                        <p>A convenient button for user actions, such as signing in and managing profiles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="getting-started">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">Getting Started</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Prerequisites</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Node.js (v14 or later)</li>
+                        <li>npm or yarn</li>
+                        <li>An AWS account (for S3 configuration)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Installation</h3>
+                    <ol class="list-decimal list-inside space-y-4">
+                        <li>
+                            Clone the repository:
+                            <pre class="bg-gray-100 p-2 rounded-md mt-2 overflow-x-auto">
+                                <code>
+git clone https://github.com/yourusername/nextjs-starter-repo.git
+cd nextjs-starter-repo
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            Install dependencies:
+                            <pre class="bg-gray-100 p-2 rounded-md mt-2 overflow-x-auto">
+                                <code>npm install</code>
+                            </pre>
+                            or
+                            <pre class="bg-gray-100 p-2 rounded-md mt-2 overflow-x-auto">
+                                <code>yarn install</code>
+                            </pre>
+                        </li>
+                        <li>Set up your environment variables (create a .env.local file)</li>
+                        <li>
+                            Run the development server:
+                            <pre class="bg-gray-100 p-2 rounded-md mt-2 overflow-x-auto">
+                                <code>npm run dev</code>
+                            </pre>
+                            or
+                            <pre class="bg-gray-100 p-2 rounded-md mt-2 overflow-x-auto">
+                                <code>yarn dev</code>
+                            </pre>
+                        </li>
+                        <li>Open your browser and navigate to http://localhost:3000</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="project-structure">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">Project Structure</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <pre class="text-sm overflow-x-auto">
+                        <code>
+├── src
+│   ├── actions
+│   │   ├── AWS
+│   │   │   └── ProfilePicUpload.ts
+│   │   ├── Auth
+│   │   │   ├── login.ts
+│   │   │   ├── newVerification.tsx
+│   │   │   └── register.ts
+│   │   └── Data
+│   │       ├── Token
+│   │       │   └── GET.ts
+│   │       └── User
+│   │           └── GET.ts
+│   ├── app
+│   │   ├── (auth)
+│   │   │   ├── error
+│   │   │   │   └── page.tsx
+│   │   │   ├── login
+│   │   │   │   └── page.tsx
+│   │   │   ├── new-verification
+│   │   │   │   └── page.tsx
+│   │   │   └── register
+│   │   │       └── page.tsx
+│   │   ├── (protected)
+│   │   │   └── getting-started
+│   │   │       └── page.tsx
+│   │   ├── api
+│   │   │   └── auth
+│   │   │       └── [...nextAuth]
+│   │   │           └── route.ts
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── auth.config.ts
+│   ├── auth.ts
+│   ├── components
+│   │   ├── Auth
+│   │   │   ├── Login
+│   │   │   │   ├── LoginForm.tsx
+│   │   │   │   ├── ProviderLogIn.tsx
+│   │   │   │   └── RegisterForm.tsx
+│   │   │   ├── NewVerificationForm.tsx
+│   │   │   ├── Register
+│   │   │   │   └── ImageCropper.tsx
+│   │   │   └── Userbutton
+│   │   │       ├── Button.tsx
+│   │   │       └── SettingsDialogue.tsx
+│   │   ├── Global
+│   │   │   ├── ErrorMessage.tsx
+│   │   │   └── SuccessToast.tsx
+│   │   └── ui
+│   │       └── ... (ShadCN UI components)
+│   ├── hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── lib
+│   │   ├── cryptography.ts
+│   │   ├── db.ts
+│   │   ├── mail.ts
+│   │   ├── schema
+│   │   │   ├── LoginSchema.ts
+│   │   │   └── RegisterSchems.ts
+│   │   ├── token.ts
+│   │   └── utils.ts
+│   ├── middleware.ts
+│   ├── routes.ts
+│   └── types
+│       └── next-auth.d.ts
+├── tailwind.config.ts
+└── tsconfig.json
+                        </code>
+                    </pre>
+                </div>
+            </section>
+
+            <section id="authentication">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">Authentication</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold mb-2">NextAuth.js Integration</h3>
+                    <p class="mb-4">
+                        This starter uses NextAuth.js for authentication. It supports multiple OAuth providers and includes a custom user registration process.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2">Key Files</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>src/app/api/auth/[...nextauth]/route.ts: NextAuth API route</li>
+                        <li>src/auth.ts: NextAuth configuration</li>
+                        <li>src/components/Auth/Login/LoginForm.tsx: Login form component</li>
+                        <li>src/components/Auth/Login/ProviderLogIn.tsx: OAuth provider buttons</li>
+                        <li>src/components/Auth/Register/RegisterForm.tsx: User registration form</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Authentication Flow</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>User initiates login or registration process</li>
+                        <li>NextAuth.js handles OAuth provider authentication or custom credentials</li>
+                        <li>User session is created and managed by NextAuth.js</li>
+                        <li>Protected routes are secured using Next.js middleware</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="file-upload">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">File Upload</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold mb-2">AWS S3 Integration</h3>
+                    <p class="mb-4">
+                        This starter includes functionality to upload profile pictures to AWS S3.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2">Key Files</h4>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>src/actions/AWS/ProfilePicUpload.ts: Handles the upload process to S3</li>
+                        <li>src/components/Auth/Register/ImageCropper.tsx: UI for cropping and uploading profile pictures</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Upload Process</h3>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li>User selects an image for their  profile picture</li>
+                        <li>ImageCropper component allows user to crop and adjust the image</li>
+                        <li>ProfilePicUpload action is called to handle the S3 upload</li>
+                        <li>Uploaded image URL is saved to the user's profile</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="ui-components">
+                <h2 class="text-3xl font-bold mb-6 text-blue-600">UI Components</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold mb-2">ShadCN UI Components</h3>
+                    <p class="mb-4">
+                        This starter includes a full set of UI components from ShadCN, located in src/components/ui/.
+                        These components provide a solid foundation for building a modern, responsive user interface.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Buttons</h3>
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                            Default Button
+                        </button>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Inputs</h3>
+                        <input type="text" placeholder="Enter text..." class="border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Cards</h3>
+                        <p>You're looking at a card right now!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -22,6 +22,7 @@ import  SuccessToast  from "@/components/Global/SuccessToast"
 import { FaGithub } from "react-icons/fa6"
 import Link from "next/link"
 import { LoginSchemaType } from "@/lib/schema/LoginSchema"
+import ProviderSignIn from "./ProviderLogIn"
 
 export default function LoginForm() {
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -71,6 +72,7 @@ export default function LoginForm() {
             Enter your email below to login to your account.
           </CardDescription>
         </CardHeader>
+        <ProviderSignIn />
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>

@@ -66,6 +66,7 @@
     "react-resizable-panels": "^2.1.6",
     "recharts": "^2.13.3",
     "resend": "^4.0.1-alpha.0",
+    "scrapique": ".",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",

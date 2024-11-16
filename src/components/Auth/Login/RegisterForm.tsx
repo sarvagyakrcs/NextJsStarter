@@ -54,6 +54,7 @@ export function RegisterForm() {
             return () => {
                 clearTimeout(handler);
             };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [...dependencies, delay]);
     };
 
@@ -165,7 +166,6 @@ export function RegisterForm() {
 
     const checkUsername = async () => {
         if (username.length < 6) {
-            setError(null);
             return;
         }
         try {
